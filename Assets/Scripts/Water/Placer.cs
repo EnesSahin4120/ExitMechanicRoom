@@ -13,16 +13,14 @@ public class Placer : MonoBehaviour
     private Vector3 draggableStartPosition;
 
     private MouseInfo mouseInfo;
-    private CameraController cameraController;
     private WaterController waterController;
     private HelperInfo helperInfo;
 
     public static event Action onSettled_to_Dispenser;
 
-    public void Init(MouseInfo _mouseInfo, CameraController _cameraController, WaterController _waterController,HelperInfo _helperInfo)
+    public void Init(MouseInfo _mouseInfo,WaterController _waterController,HelperInfo _helperInfo)
     {
         mouseInfo = _mouseInfo;
-        cameraController = _cameraController;
         waterController = _waterController;
         helperInfo = _helperInfo;
     }
@@ -93,9 +91,6 @@ public class Placer : MonoBehaviour
                         Settled_to_Dispenser(currentDraggable);
                     }
                     currentDraggable.UpdateInfo();
-
-                    if (currentDraggable.CurrentTargetIndex == currentDraggable.WaterPlantIndex)
-                        cameraController.ChangeCamera();
                 }
                 else
                     waterController.StartCoroutine(waterController.WaterPlant_and_Finish());

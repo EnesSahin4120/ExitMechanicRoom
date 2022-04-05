@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
         Bin.onFilledBin += ChangeCamera;
         PaintController.onStartPainting += ChangeCamera;
         WaterController.onWateredPlant += ChangeCamera;
+        Placer.onSettled_to_Dispenser += ChangeCamera;
     }
 
     private void OnDisable()
@@ -24,6 +25,7 @@ public class CameraController : MonoBehaviour
         Bin.onFilledBin -= ChangeCamera;
         PaintController.onStartPainting -= ChangeCamera;
         WaterController.onWateredPlant -= ChangeCamera;
+        Placer.onSettled_to_Dispenser -= ChangeCamera;
     }
 
     private void Awake()

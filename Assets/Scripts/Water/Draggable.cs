@@ -29,18 +29,6 @@ public class Draggable : MonoBehaviour
         }
     }
 
-    private int _waterPlantIndex = 1;
-    public int WaterPlantIndex
-    {
-        get
-        {
-            return _waterPlantIndex;
-        }
-        set
-        {
-            _waterPlantIndex = value;
-        }
-    }
     private int _fillTheGlassIndex = 0;
     public int FillTheGlassIndex
     {

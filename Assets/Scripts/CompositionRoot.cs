@@ -14,7 +14,6 @@ public class CompositionRoot : MonoBehaviour
     private GameManager gameManager;
     private Draggable draggable;
     private PaintController paintController;
-    private CameraController cameraController;
     private WaterController waterController;
     private Bin bin;
     [SerializeField] private Glass glass;
@@ -34,14 +33,13 @@ public class CompositionRoot : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         draggable = FindObjectOfType<Draggable>();
         paintController = FindObjectOfType<PaintController>();
-        cameraController = FindObjectOfType<CameraController>();
         waterController = FindObjectOfType<WaterController>();
         bin = FindObjectOfType<Bin>();
         helperArrow = FindObjectOfType<HelperArrow>();
         helperInfo = FindObjectOfType<HelperInfo>();
         helper_UI = FindObjectOfType<Helper_UI>();
 
-        placer.Init(mouseInfo, cameraController, waterController, helperInfo);
+        placer.Init(mouseInfo, waterController, helperInfo);
         drawController.Init(boardDrawer, drawInfo);
         gameManager.InitThrowComponents(throwController, aim);
         gameManager.InitWaterComponents(draggable, mouseInfo, placer);
